@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS Dosyasını Ekliyoruz -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap JS Dosyasını Ekliyoruz -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <title>Hesap Aracı</title>
+</head>
+<body>
+<!-- Tablo aşamaları -->
+
+ <div class="container d-flex justify-content-center"> <!-- tablobumuzu ortalamayı amaçladım -->
+    <div class="col-md-3">
+        <div class="card text-center">
+            <h5 class="card-header">Hesaplama</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <form class="form-floating mb-3">
+                    <input type="input" class="form-control form-control-sm" id="sayi1" placeholder="Lütfen 1 Sayıyı Giriniz" onkeypress="return isNumberKey(event)" data-bs-toggle="tooltip" data-bs-placement="right" title="İşlem Yapacağınız 1 Sayıyı Giriniz" >
+                    <label for="floatingInputValue">Birinci Sayı</label>
+                
+                    </form>
+                    </li>
+                <li class="list-group-item">
+                    <form class="form-floating mb-3">
+                    <input type="input" class="form-control form-control-sm" id="sayi2" placeholder="Lütfen 2 Sayıyı Giriniz" onkeypress="return isNumberKey(event)" data-bs-toggle="tooltip" data-bs-placement="right" title="İşlem Yapacağınız 2. Sayıyı Giriniz">
+                    <label for="floatingInputValue2">İkinci Sayı</label>
+                    </form>		
+                    </li>
+                </ul>
+                <div class="card-footer">			  
+					<button type="submit" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Toplama İşlemi Yapmaktadır" onClick="topla()" id="topla">Topla</button>
+					<button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Çıkarma İşlemi Yapmaktadır." onClick="cikar()" id="cikar">Çıkar</button>
+					<button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Çarpma İşlemi Yapmaktadır" onClick="carp()" id="carp">Çarp</button>
+					<button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Bölme İşlemi Yapmaktadır." onClick="Bol()" id="bol">Böl</button>
+					<button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Temizle Yapmaktadır." onClick="progressTemizle()" id="temizle">Temizle</button> 					
+				</div>
+				
+				
+				<div class="card-footer">			  
+					<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuemin="0" id="progressBar"></div></div>	
+					
+					<div class="alert alert-success" id="sonucuEkranaYazdir" role="alert"></div>	
+				
+				</div>
+				
+		</div>
+		</div>
+		
+		<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+    <p>Temizlem İşlemi Başarılı Bir Şekilde Yapıldı</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="script/hesapla.js"></script>
+</html>
